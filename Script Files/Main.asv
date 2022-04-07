@@ -1,2 +1,4 @@
 %Jackson Harris, Thomas Edwards, Quentin Saba, Connor Richard, Jackson
 %Wolfe
+
+I = imread("/ImImage2",".png")
