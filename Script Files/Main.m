@@ -14,11 +14,10 @@ imshow(I)
 
 
 
-function ImageOut = P2Y(ImageIn)
+function ImageOut = P2Y(ImageIn,pvalues)
     
     cvalues = size(ImageIn); %Size of the image by row, column, and RGB values
-
-    pvalues = [0;0;0]; %Purple Range to compare
+    
     yvalues = [0;0;0]; %Yellow color to set
 
     %Runs through each part of the Image matrix
