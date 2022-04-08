@@ -3,8 +3,8 @@
 
 %https://www.rapidtables.com/web/color/purple-color.html
 
-I = imread("Images\Image1.jfif");
-P = imread("Images\Image4.png");
+I = imread("Images\Image4.png");
+P = imread("Images\Image2.png");
 
 x = size(I)
 %O = P2Y(I);
@@ -47,7 +47,7 @@ function ImageOut = P2Y2(ImageIn)
         for c = 1:cvalues(2)
             rg = ImageIn(r,c,1)/ImageIn(r,c,2);
             bg = ImageIn(r,c,3)/ImageIn(r,c,2);
-            if ((rg >= 1) && (bg >= 1) && ImageIn(r,c,1) > 80 && ImageIn(r,c,3) > 80)
+            if (rg >= 1.6) && (bg >= 1.6) && ImageIn(r,c,1) > 70 && ImageIn(r,c,3) > 110
                 ImageIn(r,c,1) = yvalues(1);
                 ImageIn(r,c,2) = yvalues(2);
                 ImageIn(r,c,3) = yvalues(3);
