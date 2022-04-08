@@ -3,7 +3,7 @@
 
 %https://www.rapidtables.com/web/color/purple-color.html
 
-I = imread("Images\Image4.png");
+I = imread("Images\Image2.png");
 
 
 x = size(I)
@@ -24,7 +24,7 @@ function ImageOut = P2Y(ImageIn)
     for r = 1:cvalues(1)
         for c = 1:cvalues(2)
             
-            if (100 < ImageIn(r,c,1) && ImageIn(r,c,1) < 195) && (50 < ImageIn(r,c,2) && ImageIn(r,c,2) < 90) && (190 < ImageIn(r,c,3) && ImageIn(r,c,3) < 240)
+            if (ImageIn(r,c,1) > 100) && (ImageIn(r,c,2) < 100) && (ImageIn(r,c,3) > 110)
                 ImageIn(r,c,1) = yvalues(1);
                 ImageIn(r,c,2) = yvalues(2);
                 ImageIn(r,c,3) = yvalues(3);
