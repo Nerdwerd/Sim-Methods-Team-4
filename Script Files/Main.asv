@@ -4,12 +4,14 @@ clear;
 clc;
 %https://www.rapidtables.com/web/color/purple-color.html
 
-I = imread("Images\Image1.jfif");
-P = imread("Images\Image4.png");
+I1 = imread("Images\Image1.jfif");
+I2 = imread("Images\Image2.png");
+I3 = imread("Images\Image3.jpg");
+I4 = imread("Images\Image4.png");
 
-x = size(P)
+x = size(I1)
 %O = P2Y(I);
-Y = P2Y(P);
+Y = P2Y(I3);
 %imshow(O);
 imshow(Y);
 
@@ -29,7 +31,8 @@ function ImageOut = P2Y(ImageIn)
         for c = 1:cvalues(2)
             rg = ImageIn(r,c,1)/ImageIn(r,c,2);
             bg = ImageIn(r,c,3)/ImageIn(r,c,2);
-            if ((rg >= 1) && (bg >= 1) && ImageIn(r,c,1) > 80 && ImageIn(r,c,3) > 90)
+            br = ImageIn(r,c,3)/ImageIn(r,c,1);
+            if ((rg >= 1.1) && (bg >= 1) && (ImageIn(r,c,1) > 40 && ImageIn(r,c,3) > 40) && (ImageIn(r,c,1) < 150 && ImageIn(r,c,3) < 150)) %&& br >= 1
                 ImageIn(r,c,1) = yvalues(1);
                 ImageIn(r,c,2) = yvalues(2);
                 ImageIn(r,c,3) = yvalues(3);
@@ -38,17 +41,17 @@ function ImageOut = P2Y(ImageIn)
         end
     end
 
-%     for r = 1:cvalues(1)
-%         for c = 1:cvalues(2)
-%             
-%             if (ImageIn(r,c,1) > 10) && (ImageIn(r,c,2) < 100) && (ImageIn(r,c,3) > 100)
-%                 ImageIn(r,c,1) = yvalues(1);
-%                 ImageIn(r,c,2) = yvalues(2);
-%                 ImageIn(r,c,3) = yvalues(3);
-%             end
-%             
-%         end
-%     end
+    for r = 1:cvalues(1)
+        for c = 1:cvalues(2)
+            
+            if (ImageIn(r,c,1) > 100) && (ImageIn(r,c,3) > 100) && (ImageIn(r,c,2) < 230)
+                ImageIn(r,c,1) = yvalues(1);
+                ImageIn(r,c,2) = yvalues(2);
+                ImageIn(r,c,3) = yvalues(3);
+            end
+            
+        end
+    end
 
     ImageOut = ImageIn;
 end
