@@ -22,14 +22,11 @@ function ImageOut = P2Y(ImageIn)
     
     yvalues = [255;255;0]; %Yellow color to set
 
-    %Runs through each part of the Image matr
-
     %Runs through each part of the Image matrix
     for r = 1:cvalues(1)
         for c = 1:cvalues(2)
             rg = ImageIn(r,c,1)/ImageIn(r,c,2);
             bg = ImageIn(r,c,3)/ImageIn(r,c,2);
-            br = ImageIn(r,c,3)/ImageIn(r,c,1);
             if ((rg >= 1.1) && (bg >= 1.1) && (ImageIn(r,c,1) > 30 && ImageIn(r,c,3) > 30))
                 ImageIn(r,c,1) = yvalues(1);
                 ImageIn(r,c,2) = yvalues(2);
@@ -54,6 +51,5 @@ function ImageOut = P2Y(ImageIn)
             f = 0;
         end
     end
-
     ImageOut = ImageIn;
 end
