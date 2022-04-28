@@ -4,17 +4,15 @@ clear;
 clc;
 %https://www.rapidtables.com/web/color/purple-color.html
 
-%%Input Images and Insert into Function -- Connor Richard
+%%Input Images and Insert into Function -- Connor
 I1 = imread("Images\Image1.jfif");
 I2 = imread("Images\Image2.png");
 I3 = imread("Images\Image3.jpg");
 I4 = imread("Images\Image4.png");
 
-Y = P2Y(I1);
+Y = P2Y(I4);
 
-
-subplot(1,2,1), imshow(I1)
-subplot(1,2,2), imshow(Y)
+imshow(Y);
 
 
 
@@ -28,7 +26,7 @@ function ImageOut = P2Y(ImageIn)
     %Runs through each part of the Image matrix -- Jackson Wolfe
     for r = 1:cvalues(1)
         for c = 1:cvalues(2)
-            %%Thomas Edwards
+            %%Thomas
             rg = ImageIn(r,c,1)/ImageIn(r,c,2);
             bg = ImageIn(r,c,3)/ImageIn(r,c,2);
             if ((rg >= 1.1) && (bg >= 1.1) && (ImageIn(r,c,1) > 30 && ImageIn(r,c,3) > 30))
@@ -42,7 +40,7 @@ function ImageOut = P2Y(ImageIn)
 
     for r = 1:cvalues(1)
         for c = 1:cvalues(2)
-            %%This is an extra loop to Jackson Harris
+            %%Jackson Harris
             t1 = abs(ImageIn(r,c,1) - ImageIn(r,c,2)); %t1 & t2 measure the difference between the red, green, and blue values.
             t2 = abs(ImageIn(r,c,1) - ImageIn(r,c,3));
             if t1 < 3 && t2 < 3 %If both are less than 3 apart the f = 0 and this means color is grey.
@@ -55,7 +53,7 @@ function ImageOut = P2Y(ImageIn)
                 ImageIn(r,c,2) = yvalues(2);
                 ImageIn(r,c,3) = yvalues(3);
             end
-            f = 0; %Resets the variable used to check if grey.
+            f = 0;
         end
     end
     ImageOut = ImageIn;
