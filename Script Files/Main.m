@@ -10,13 +10,25 @@ I2 = imread("Images\Image2.png");
 I3 = imread("Images\Image3.jpg");
 I4 = imread("Images\Image4.png");
 
-Y = P2Y(I1);
-
-
-subplot(1,2,1), imshow(I1)
-subplot(1,2,2), imshow(Y)
-
-%Rewriting new image files.
+%Y = P2Y(I1);
+%------------------Rewriting new image---------------
+Y1 = P2Y(I1);
+Y2 = P2Y(I2);
+Y3 = P2Y(I3);
+Y4 = P2Y(I4);
+%------------Presenting the new image-----------------------
+subplot(1,2,1),imshow(I1)
+subplot(1,2,2),imshow(Y1)
+figure;
+subplot(1,2,1),imshow(I2)
+subplot(1,2,2),imshow(Y2)
+figure;
+subplot(1,2,1),imshow(I3)
+subplot(1,2,2),imshow(Y3)
+figure;
+subplot(1,2,1),imshow(I4)
+subplot(1,2,2),imshow(Y4)
+%-------Rewriting new image files---------------------
 imwrite(Y1,'Image1_A.PNG');
 imwrite(Y2,'Image2_A.PNG');
 imwrite(Y3,'Image3_A.PNG');
