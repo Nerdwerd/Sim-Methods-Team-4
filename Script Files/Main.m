@@ -17,10 +17,10 @@ subplot(1,2,1), imshow(I1)
 subplot(1,2,2), imshow(Y)
 
 %Rewriting new image files.
-imwrite(Y1,'Image1_A','PNG');
-imwrite(Y2,'Image2_A','PNG');
-imwrite(Y3,'Image3_A','PNG');
-imwrite(Y4,'Image4_A','PNG');
+imwrite(Y1,'Image1_A.PNG');
+imwrite(Y2,'Image2_A.PNG');
+imwrite(Y3,'Image3_A.PNG');
+imwrite(Y4,'Image4_A.PNG');
 
 
 function ImageOut = P2Y(ImageIn)
