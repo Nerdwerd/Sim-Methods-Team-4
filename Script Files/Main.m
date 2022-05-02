@@ -49,7 +49,10 @@ function ImageOut = P2Y(ImageIn)
             rg = ImageIn(r,c,1)/ImageIn(r,c,2); %ratio between red and green colors 
             bg = ImageIn(r,c,3)/ImageIn(r,c,2); %ratio between blue and green colors
             % if the ratio are greater than or equal to these numbers then change to yellow
-            if ((rg >= 1.1) && (bg >= 1.1) && (ImageIn(r,c,1) > 30 && ImageIn(r,c,3) > 30)) 
+            if ((rg >= 1.1) && (bg >= 1.1) && (ImageIn(r,c,1) > 30 && ImageIn(r,c,3) > 30))
+                %1 and 3 are red and blue so if the previous ratio is true
+                %and the values of red and blue are> 30 then y value
+                %replaces the z vector
                 ImageIn(r,c,1) = yvalues(1);
                 ImageIn(r,c,2) = yvalues(2);
                 ImageIn(r,c,3) = yvalues(3);
